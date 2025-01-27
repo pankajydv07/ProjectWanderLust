@@ -80,10 +80,11 @@
                     <%= review.comment %>
                   </p>
                  
-
+<% if(currUser && review.author._id.equals(currUser._id) ){ %>
                   <form class="mb-3" method="post" action="/listings/<%=  list.id %>/reviews/<%= review.id %>?_method=DELETE">
                     <button class="btn btn-dark">Delete</button>
                   </form>
+<% } %>
                 </div>
               </div>
               <% } %>
